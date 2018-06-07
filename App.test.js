@@ -1,6 +1,8 @@
 import React from 'react';
 import App from './App';
 import { shallow } from 'enzyme';
+import { getAllText } from './helpers/getAllText';
+
 
 describe('App', () => {
   it('should render app title', () => {
@@ -8,7 +10,3 @@ describe('App', () => {
     expect(getAllText(wrapper)).toContain('Top Notch Recipes');
   });
 });
-
-function getAllText(wrapper) {
-    return wrapper.find('Text').reduce((prev, curr) => prev + curr.dive().text(), '');
-}
