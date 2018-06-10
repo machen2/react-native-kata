@@ -11,7 +11,10 @@ const RecipeList = (props) => {
 
 function renderRecipes(props) {
     return props.recipes.map(recipe =>
-        <Text key={recipe.name}>{recipe.name}</Text>
+        <View key={recipe.name}>
+            <Text key={recipe.name}>{recipe.name}</Text>
+            <Text key={recipe.rating}>Average Rating: {recipe.rating}</Text>
+        </View>
     )
 }
 

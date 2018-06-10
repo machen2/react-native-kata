@@ -10,11 +10,11 @@ describe('App', () => {
   });
 
   it('should pass in recipe props to recipe list', () => {
-      let wrapper = shallow(<App />);
       let expectedRecipeProps = [
-          {name: 'Biscuits and Gravy'},
-          {name: 'Tacos'}
+          {name: 'Biscuits and Gravy', rating: '3'},
+          {name: 'Tacos', rating: '4'}
       ];
+      let wrapper = shallow(<App />);
       expect(wrapper.find('RecipeList').props().recipes).toEqual(expectedRecipeProps);
   });
 });
