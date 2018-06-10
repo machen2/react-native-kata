@@ -13,4 +13,10 @@ describe('Recipe List', () => {
         let wrapper = shallow(<RecipeList recipes={[{name: 'Tacos'}]}/>);
         expect(getAllText(wrapper)).toContain('Tacos');
     });
+
+    it('should have a rating for a recipe', () => {
+        let wrapper = shallow(<RecipeList recipes={[{name: 'Tacos', rating: '4'}]}/>);
+        expect(getAllText(wrapper)).toContain('Average Rating');
+        expect(getAllText(wrapper)).toContain('4');
+    });
 });

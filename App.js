@@ -7,7 +7,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Text testID='app-title' style={styles.textStyle}>Top Notch Recipes</Text>
-        <RecipeList recipes={[{name: 'Biscuits and Gravy'},{name: 'Tacos'}]}/>
+        <RecipeList recipes={[{name: 'Biscuits and Gravy', rating: '3'},{name: 'Tacos', rating: '4'}]}/>
       </View>
     );
   }
