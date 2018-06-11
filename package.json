@@ -10,15 +10,16 @@
   "dependencies": {
     "react": "16.3.1",
     "react-dom": "^16.4.0",
-    "react-native": "0.55.4"
+    "react-native": "0.55.4",
+    "react-navigation": "^2.2.5"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
     "babel-jest": "23.0.1",
     "babel-preset-react-native": "4.0.0",
+    "detox": "^7.4.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "detox": "^7.4.0",
     "jest": "23.1.0",
     "mocha": "^5.2.0",
     "react-test-renderer": "16.3.1"
@@ -27,6 +28,9 @@
     "preset": "react-native",
     "testPathIgnorePatterns": [
       "/e2e"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|react-navigation)"
     ],
     "setupFiles": [
       "./jestSetup.js"
@@ -41,6 +45,5 @@
         "name": "iPhone 8"
       }
     }
-    
   }
 }

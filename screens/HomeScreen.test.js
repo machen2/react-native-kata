@@ -1,11 +1,11 @@
 import React from 'react';
-import App from './App';
+import HomeScreen from './HomeScreen';
 import { shallow } from 'enzyme';
-import { getAllText } from './helpers/getAllText';
+import { getAllText } from '../helpers/getAllText';
 
-describe('App', () => {
+describe('HomeScreen', () => {
   it('should render app title', () => {
-    let wrapper = shallow(<App />);
+    let wrapper = shallow(<HomeScreen />);
     expect(getAllText(wrapper)).toContain('Top Notch Recipes');
   });
 
@@ -14,7 +14,7 @@ describe('App', () => {
           {name: 'Biscuits and Gravy', rating: '3'},
           {name: 'Tacos', rating: '4'}
       ];
-      let wrapper = shallow(<App />);
+      let wrapper = shallow(<HomeScreen />);
       expect(wrapper.find('RecipeList').props().recipes).toEqual(expectedRecipeProps);
   });
 });

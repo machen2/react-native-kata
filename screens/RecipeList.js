@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
+import RecipeDetails from './RecipeDetails';
 
 const RecipeList = (props) => {
     return (
@@ -12,7 +13,9 @@ const RecipeList = (props) => {
 function renderRecipes(props) {
     return props.recipes.map(recipe =>
         <View key={recipe.name}>
-            <Text key={recipe.name}>{recipe.name}</Text>
+            <TouchableOpacity key={recipe.name} onPress={() => props.navigation.navigate('RecipeDetails')}>
+                <Text>{recipe.name}</Text>
+            </TouchableOpacity>
             <Text key={recipe.rating}>Average Rating: {recipe.rating}</Text>
         </View>
     )
